@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2021计算机图形学实验——Fealoyalmy编写</title>   
+    <script src="js/jquery-3.6.0.js"></script>    
+    <script src="js/dom.min.js"></script>
+    <script src="tools.js"></script>   
+</head>
+<body> 
+    <img id="img1" src="img/Aurora-1080.jpg" style="display: none; opacity: 0.5;" width="480px" height="270px">
+    <img id="img2" src="img/Burner-1080.jpg" style="display: none;" width="480px" height="270px">
+    <img id="img3" src="img/mount.jpg" style="display: none;" width="480px" height="270px">
+    <img id="img4" src="img/sea.jpg" style="display: none;" width="480px" height="270px">
+    <div class="toolsPanel">
+        <button type="button" class="btn" id="drawPixel" value="1">打 点</button> 
+        <button type="button" class="btn" id="drawLine" value="2">画 线</button> 
+        <button type="button" class="btn" id="drawRect" value="3">画多边形</button> 
+        <button type="button" class="btn" id="drawBezier" value="4">画Bezier曲线</button>
+        <button type="button" class="btn" id="fillRect" value="5">填充多边形</button>
+        <button type="button" class="btn" id="ifPixelinRect" value="6">弧长累进法</button>
+        <button type="button" class="btn" id="ifAllpixelInrect" value="7">弧长累进点覆盖</button>
+        <button type="button" class="btn" id="rgbcircle" value="8">绘制圆形</button>
+        <button type="button" class="btn" id="rgbimg" value="9">创建RGB图</button>
+        <button type="button" class="btn" id="creatergb" value="10">创建HSV三补色</button>
+        <button type="button" class="btn" id="clearArray" >清空点Array</button>
+        <button type="button" class="btn" id="clearCanvas" >清空画布</button>
+        
+    </div>
+    <div class="infoPanel">
+        <div class="corspan">
+            <p id="xcor">x</p>
+            <p id="ycor">y</p>
+        </div>
+        <div class="corspan">
+            <p id="color">color</p>
+        </div>     
+        <div class="corspan">
+            <p id="choice">当前功能：</p>
+        </div>
+        <div class="corspan" style="width: 200px;">
+            <p>颜色：</p><input id="colorinput" type="text" style="width: 60px;">
+        </div>
+        <div class="corspan">
+            <button type="button" class="btn btn-top" id="greyimg" >转换img为灰度图</button>
+            <button type="button" class="btn btn-top" id="imgcomb" >img融合</button>
+        </div>
+        <div class="corspan" style="width: 700px; margin-top: 15px;">
+            <span>点数组：</span>      
+            <p id="array">Array</p>
+        </div> 
+    </div>
+</body>
+
+<style>
+    .test{
+        color: rgb(252, 255, 240);
+    }
+    .toolsPanel{
+        position: fixed;
+        top: 100px;
+        background-color: #ffe4c4;
+        width: 90px;
+        height: 600px;
+        border-radius: 10px;
+        margin: 0;
+        padding: 0;
+    }
+    .btn{          
+        background-color: rgb(53, 215, 236);
+        width: 80px;
+        height: auto;
+        margin: 5px 5px;
+        border: 2px solid;
+        border-radius: 8px;
+        color: white;
+        font-size: 14px;
+        box-shadow: 5px 5px 8px #888888;
+        transition: 0.1s;
+        -webkit-transition: 0.1s;
+        /* font-weight: bold; */
+    }
+    .btn:hover{
+        transform:translateX(3px);
+        /* transform:translateY(1px); */
+    }
+    .btn-top{
+        background-color: rgb(77, 134, 207); 
+        width: auto; 
+        border: none; 
+        box-shadow: none;
+    }
+    button.active{
+        background-color: #2085d8;
+    }
+    .infoPanel{
+        position: absolute;
+        left: 100px;
+        background-color: rgb(56, 56, 56);
+        width: 800px;
+        height: 90px;   
+        margin: 0;     
+        color: white;  
+        font-size: 14px;
+    }
+    .infoPanel>span{
+        margin: 20px 20px;
+    }
+    .corspan{
+        width: 140px;
+        height: 30px;
+        /* background-color: rgb(94, 182, 167); */
+        float: left;
+    }
+    .corspan > p, span, input{
+        margin: 5px 5px;
+        float: left;
+    }
+
+</style>
+</html>
